@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Karla;
+}
+.link{
+    font-size: 36px;
+    margin: 10px;
+}
+h1{
+    margin: 10px;
+    font-size: 40px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 10%;
+    background: rgb(199, 141, 141);
+}
+input, button{
+    margin: 10px;
+    font-family: Karla;
+    padding: 5px;
+    font-size: 25px;
+}
