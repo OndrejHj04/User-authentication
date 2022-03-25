@@ -34,3 +34,17 @@ label{
     font-size: 26px;
     margin: 10px;
 }
+.card-container{
+    background: rgb(175, 175, 175);
+    display: flex;
+}
+.user-card{
+    text-align: center;
+}
+.button{
+    background: pink;
+    border: 2px solid red;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
