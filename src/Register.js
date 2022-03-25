@@ -6,8 +6,9 @@ export default function Register(props) {
     const [log, setLog] = useState({
         name: "", password: ""
     })
-
+    const [wrongValue, setWrongValue] = useState()
     function change(event){
+        setWrongValue()
         setLog(oldVal=>{
             return {
                 ...oldVal,
@@ -18,8 +19,13 @@ export default function Register(props) {
 
     function submit(event){
         event.preventDefault()
-        database.users.push(log)
-        props.changeUser(log)
+
+        if(log.name.length > 3 && log.password.length > 3 && database.users.every(item=>item.name !== log.name)){
+            database.users.push(log)
+            props.changeUser(log)
+        }else{
+            setWrongValue(true)
+        }
         setLog({name: "", password: ""})
     }
 
@@ -31,6 +37,7 @@ export default function Register(props) {
          <input type="password" placeholder="password" name="password" onChange={change} value={log.password}/>
          <button>Login</button>
      </form>
+     {wrongValue && <h2>Username must be unique and longer than 3 letters</h2>}
     </>
   );
 }
